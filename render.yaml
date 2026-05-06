@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: team-task-manager
+    runtime: node
+    buildCommand: npm run install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DB_HOST
+        placeholder: "Your MySQL Host"
+      - key: DB_PORT
+        value: "3306"
+      - key: DB_USER
+        placeholder: "Your MySQL User"
+      - key: DB_PASSWORD
+        placeholder: "Your MySQL Password"
+      - key: DB_NAME
+        value: "team_task_manager"
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        value: "https://team-task-manager.onrender.com"
