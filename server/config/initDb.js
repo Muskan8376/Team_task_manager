@@ -16,6 +16,7 @@ async function initializeDatabase() {
     port: parseInt(process.env.DB_PORT) || 3306,
     user: process.env.DB_USER || 'root',
     password: process.env.DB_PASSWORD || '',
+    ssl: process.env.DB_SSL === 'true' ? { rejectUnauthorized: false } : null
   });
 
   const dbName = process.env.DB_NAME || 'team_task_manager';
